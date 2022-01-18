@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+.app {
+  background-image: url('./assets/sunny-day.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+main {
   min-height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.75)
+  );
+  padding: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Search Box CSS */
+.search-box {
+  width: 100%;
+  height: 3rem;
+  font-size: 1.5rem;
+  font-style: italic;
+  border-radius: 1rem 0 1rem 0;
+  padding: 0.25rem 0.5rem;
+  border: 2px solid #f1f1f1;
+  background-color: transparent;
+  color: #f1f1f1;
+  margin-bottom: 3rem;
+}
+
+.search-box::placeholder {
+  color: #f1f1f1;
+}
+
+/* Weather CSS */
+.weather-container {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 0.25rem 0.5rem;
+  color: #f1f1f1;
+  margin-bottom: 2.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.weather-city {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.weather-date {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.weather-temperature {
+  font-size: 6rem;
+}
+
+.weather-weather {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.weather-info {
+  display: flex;
+  gap: 1rem;
+}
+
+.weather-info div {
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Forecast Box CSS*/
+.forecast-box {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Day Forecast CSS */
+.day-f-box {
+  width: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  border: 1px solid #f1f1f1;
+  border-radius: 1rem 0 1rem 0;
 }
