@@ -1,28 +1,54 @@
-import React from 'react'
-
-// import { Container } from './styles';
-
-function Weather() {
+// Libraries
+import PropTypes from 'prop-types'
+// TO-DO
+// import formatDate function
+function Weather({
+  city,
+  country,
+  temperature,
+  weather,
+  sunrise,
+  sunset,
+  rain,
+  umidity,
+  wind,
+  feelsLike
+}) {
   return (
     <div className="weather-container">
-      <div className="weather-city">Blumenau, Brasil</div>
-      <div className="weather-date">Terça, 18 de janeiro de 2022</div>
-      <div className="weather-temperature">36°C</div>
-      <div className="weather-weather">Ensolarado</div>
+      <div className="weather-city">
+        {city}, {country}
+      </div>
+      <div className="weather-date">Format Date</div>
+      <div className="weather-temperature">{temperature}°C</div>
+      <div className="weather-weather">{weather}</div>
       <div className="weather-info">
-        <div>Nascer do sol: 05h45</div>
-        <div>Pôr do sol: 18h44</div>
+        <div>Nascer do sol: {sunrise}</div>
+        <div>Pôr do sol: {sunset}</div>
       </div>
       <div className="weather-info">
-        <div>Chuva: 17%</div>
-        <div>Umidade: 55%</div>
-        <div>Vento: 10 km/h</div>
+        <div>Chuva: {rain}%</div>
+        <div>Umidade: {umidity}%</div>
+        <div>Vento: {wind} km/h</div>
       </div>
       <div className="weather-info">
-        <div>Sensação térmica: 40°C</div>
+        <div>Sensação térmica: {feelsLike}°C</div>
       </div>
     </div>
   )
+}
+
+Weather.prototypepropTypes = {
+  city: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
+  temperature: PropTypes.number.isRequired,
+  weather: PropTypes.string.isRequired,
+  sunrise: PropTypes.string.isRequired,
+  sunset: PropTypes.string.isRequired,
+  rain: PropTypes.number.isRequired,
+  umidity: PropTypes.number.isRequired,
+  wind: PropTypes.number.isRequired,
+  feelsLike: PropTypes.number.isRequired
 }
 
 export default Weather
