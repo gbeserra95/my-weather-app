@@ -1,8 +1,10 @@
 // Libraries
 import PropTypes from 'prop-types'
-// TO-DO
-// import formatDate function
+// Utils
+import { formateDate } from '../../utils/formateDate'
 function Weather({
+  maxTemp,
+  minTemp,
   city,
   country,
   temp,
@@ -18,16 +20,18 @@ function Weather({
       <div className="weather-city">
         {city}, {country}
       </div>
-      <div className="weather-date">Format Date</div>
+      <div className="weather-date">{formateDate(new Date())}</div>
       <div className="weather-temperature">{temp}°C</div>
-      <div className="weather-weather">{weather}</div>
+      <div className="weather-weather">
+        {maxTemp}° / <span>{minTemp}°</span> {weather}
+      </div>
       <div className="weather-info">
         <div>Nascer do sol: {sunrise}</div>
         <div>Pôr do sol: {sunset}</div>
       </div>
       <div className="weather-info">
         <div>Umidade: {humidity}%</div>
-        <div>Vento: {wind} km/h</div>
+        <div>Vento: {wind.toFixed(2)} km/h</div>
       </div>
       <div className="weather-info">
         <div>Sensação térmica: {feelsLike}°C</div>
@@ -37,6 +41,8 @@ function Weather({
 }
 
 Weather.prototypepropTypes = {
+  maxTemp: PropTypes.number.isRequired,
+  minTemp: PropTypes.number.isRequired,
   city: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,
   temp: PropTypes.number.isRequired,
