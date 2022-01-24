@@ -3,9 +3,9 @@ import DayForecast from '../DayForecast'
 import PropTypes from 'prop-types'
 import { formateDate } from '../../utils/formateDate'
 
-function Forecast({ timeZone, data }) {
+function Forecast({ data }) {
   let forecastList = []
-  let counter = 0
+  let counter = 8
 
   for (let i = 0; i < 4; i++) {
     forecastList.push(data[counter])
@@ -23,6 +23,7 @@ function Forecast({ timeZone, data }) {
               maxTemp={Math.round(day.main.temp_max)}
               minTemp={Math.round(day.main.temp_min)}
               weather={day.weather[0].description}
+              main={day.weather[0].main}
             />
           )
         })

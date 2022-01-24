@@ -68,18 +68,21 @@ main {
   margin-bottom: 1rem;
 }
 
-.weather-weather span {
-  font-weight: normal;
-}
-
 .weather-info {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
+  width: 10rem;
+  font-size: 0.75rem;
 }
 
-.weather-info div {
+.weather-div {
+  display: flex;
+  align-items: center;
   font-size: 0.75rem;
   margin-bottom: 0.5rem;
+  gap: 0.5rem;
 }
 
 /* Forecast Box CSS*/

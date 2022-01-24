@@ -1,7 +1,8 @@
-// Libraries
 import PropTypes from 'prop-types'
-// Utils
 import { formateDate } from '../../utils/formateDate'
+import WeatherIcon from '../WeatherIcon'
+
+const SMALL_ICON_SIZE = 36
 function Weather({
   maxTemp,
   minTemp,
@@ -22,19 +23,39 @@ function Weather({
       </div>
       <div className="weather-date">{formateDate(new Date())}</div>
       <div className="weather-temperature">{temp}°C</div>
-      <div className="weather-weather">
-        {maxTemp}° / <span>{minTemp}°</span> {weather}
+      <div className="weather-weather">{weather}</div>
+      <div className="weather-info">
+        <div className="weather-div">
+          <WeatherIcon main="MaxTemp" size={24} />
+          <div>{maxTemp} °C</div>
+        </div>
+        <div className="weather-div">
+          <WeatherIcon main="MinTemp" size={24} />
+          <div>{minTemp} °C</div>
+        </div>
       </div>
       <div className="weather-info">
-        <div>Nascer do sol: {sunrise}</div>
-        <div>Pôr do sol: {sunset}</div>
+        <div className="weather-div">
+          <WeatherIcon main="Sunrise" size={SMALL_ICON_SIZE} />
+          <div>{sunrise}</div>
+        </div>
+        <div className="weather-div">
+          <WeatherIcon main="Sunset" size={SMALL_ICON_SIZE} />
+          <div>{sunset}</div>
+        </div>
       </div>
       <div className="weather-info">
-        <div>Umidade: {humidity}%</div>
-        <div>Vento: {wind.toFixed(2)} km/h</div>
+        <div className="weather-div">
+          <WeatherIcon main="Humidity" size={36} />
+          <div>{humidity}</div>
+        </div>
+        <div className="weather-div">
+          <WeatherIcon main="Wind" size={24} />
+          <div>{wind.toFixed(2)} km/h</div>
+        </div>
       </div>
       <div className="weather-info">
-        <div>Sensação térmica: {feelsLike}°C</div>
+        <div className="weather-div">Sensação térmica: {feelsLike}°C</div>
       </div>
     </div>
   )

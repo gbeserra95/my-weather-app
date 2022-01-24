@@ -1,12 +1,12 @@
-// Styles
 import './App.css'
-// Hooks
+
 import { useState, useEffect } from 'react'
-// Components
+
+import Container from './Components/Container'
 import SearchBox from './Components/SearchBox'
 import Weather from './Components/Weather'
 import Forecast from './Components/Forecast'
-// Utils
+
 import { getCoordinates } from './utils/getLocation'
 import { timeStampToHour } from './utils/formateDate'
 // API basics
