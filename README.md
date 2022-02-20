@@ -11,7 +11,7 @@ My Weather App is a [React](https://reactjs.org/) Application that fetches weath
 npm install
 ```
 Before starting the application, you must get your own OpenWeatherMap and Radar API keys.</br>
-Add those keys as values of the variables **radarKey** at ***src/utils/radarApi.js*** and **api.key** at ***src/utils/weatherApi.js**.
+Add those keys as values of the variables **radarKey** at *src/utils/radarApi.js* and **api.key** at *src/utils/weatherApi.js*.
 
 You can also add those keys as environment variables.
 
