@@ -1,6 +1,9 @@
 import React from 'react'
 import DayForecast from '../DayForecast'
 import PropTypes from 'prop-types'
+
+import { Container } from './styles'
+
 import { formateDate } from '../../utils/formateDate'
 
 function Forecast({ data }) {
@@ -11,12 +14,10 @@ function Forecast({ data }) {
     forecastList.push(data[counter])
     counter += 8
   }
-  console.log(forecastList)
   return (
-    <div className="forecast-box">
+    <Container>
       {React.Children.toArray(
         forecastList.map(day => {
-          console.log(day.main.temp_max, day.main.temp_min)
           return (
             <DayForecast
               date={formateDate(new Date(day.dt_txt), true)}
@@ -28,7 +29,7 @@ function Forecast({ data }) {
           )
         })
       )}
-    </div>
+    </Container>
   )
 }
 // date, maxTemp, minTemp, weather

@@ -2,16 +2,28 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import WeatherIcon from '../WeatherIcon'
 
+import { ContainerMax, ContainerMin, Date, Temp, Text } from './styles'
+
 function DayForecast({ date, maxTemp, weather, main }) {
   return (
-    <div className="day-f-box">
-      <div className="day-f-date">{date}</div>
-      <div className="day-f-temp">
-        <span>{maxTemp}°C</span>
-      </div>
-      <WeatherIcon main={main} size={48} />
-      <div className="day-f-text">{weather}</div>
-    </div>
+    <>
+      <ContainerMax>
+        <Date>{date}</Date>
+        <Temp>
+          <span>{maxTemp}°C</span>
+        </Temp>
+        <WeatherIcon main={main} size={48} />
+        <Text>{weather}</Text>
+      </ContainerMax>
+      <ContainerMin>
+        <Date>{date}</Date>
+        <Temp>
+          <span>{maxTemp}°C</span>
+        </Temp>
+        <WeatherIcon main={main} size={48} />
+        <Text>{weather}</Text>
+      </ContainerMin>
+    </>
   )
 }
 

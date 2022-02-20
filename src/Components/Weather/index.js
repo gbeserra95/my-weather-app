@@ -1,5 +1,16 @@
 import PropTypes from 'prop-types'
-import { formateDate } from '../../utils/formateDate'
+
+import {
+  Container,
+  Place,
+  DateDiv,
+  Temp,
+  WeatherDiv,
+  Info,
+  InfoDiv
+} from './styles'
+
+import { timeStampToHour, formateDate, UTCdate } from '../../utils/formateDate'
 import WeatherIcon from '../WeatherIcon'
 
 const SMALL_ICON_SIZE = 36
@@ -14,50 +25,57 @@ function Weather({
   sunset,
   humidity,
   wind,
-  feelsLike
+  feelsLike,
+  currentTime
 }) {
   return (
-    <div className="weather-container">
-      <div className="weather-city">
+    <Container>
+      <Place>
         {city}, {country}
-      </div>
-      <div className="weather-date">{formateDate(new Date())}</div>
-      <div className="weather-temperature">{temp}°C</div>
-      <div className="weather-weather">{weather}</div>
-      <div className="weather-info">
-        <div className="weather-div">
+      </Place>
+      <DateDiv>
+        {formateDate(new Date(Date.now() + currentTime * 1000))}
+      </DateDiv>
+      <Temp>{temp}°C</Temp>
+      <WeatherDiv>{weather}</WeatherDiv>
+      <Info>
+        <InfoDiv>
           <WeatherIcon main="MaxTemp" size={24} />
           <div>{maxTemp} °C</div>
-        </div>
-        <div className="weather-div">
+        </InfoDiv>
+        <InfoDiv>
           <WeatherIcon main="MinTemp" size={24} />
           <div>{minTemp} °C</div>
-        </div>
-      </div>
-      <div className="weather-info">
-        <div className="weather-div">
+        </InfoDiv>
+      </Info>
+      <Info>
+        <InfoDiv>
           <WeatherIcon main="Sunrise" size={SMALL_ICON_SIZE} />
-          <div>{sunrise}</div>
-        </div>
-        <div className="weather-div">
+          <div>{timeStampToHour(sunrise * 1000)}</div>
+        </InfoDiv>
+        <InfoDiv>
           <WeatherIcon main="Sunset" size={SMALL_ICON_SIZE} />
-          <div>{sunset}</div>
-        </div>
-      </div>
-      <div className="weather-info">
-        <div className="weather-div">
+          <div>{timeStampToHour(sunset * 1000)}</div>
+        </InfoDiv>
+      </Info>
+      <Info>
+        <InfoDiv>
           <WeatherIcon main="Humidity" size={36} />
           <div>{humidity}</div>
-        </div>
-        <div className="weather-div">
+        </InfoDiv>
+        <InfoDiv>
           <WeatherIcon main="Wind" size={24} />
           <div>{wind.toFixed(2)} km/h</div>
-        </div>
-      </div>
-      <div className="weather-info">
-        <div className="weather-div">Sensação térmica: {feelsLike}°C</div>
-      </div>
-    </div>
+        </InfoDiv>
+      </Info>
+      <Info>
+        <InfoDiv>Feels like: {feelsLike}°C</InfoDiv>
+        <InfoDiv>
+          <WeatherIcon main="Time" size={24} />
+          <div>{timeStampToHour(UTCdate() + currentTime * 1000)}</div>
+        </InfoDiv>
+      </Info>
+    </Container>
   )
 }
 
@@ -72,7 +90,8 @@ Weather.prototypepropTypes = {
   sunset: PropTypes.number.isRequired,
   humidity: PropTypes.number.isRequired,
   wind: PropTypes.number.isRequired,
-  feelsLike: PropTypes.number.isRequired
+  feelsLike: PropTypes.number.isRequired,
+  currentTime: PropTypes.number.isRequired
 }
 
 export default Weather

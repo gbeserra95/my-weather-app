@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { ImArrowUp, ImArrowDown } from 'react-icons/im'
 
 import {
@@ -17,7 +18,8 @@ import {
   WiTornado,
   WiDaySunny,
   WiCloudy,
-  WiAlien
+  WiAlien,
+  WiTime4
 } from 'react-icons/wi'
 
 function WeatherIcon({ main, size }) {
@@ -65,9 +67,16 @@ function WeatherIcon({ main, size }) {
       return <WiDaySunny color={color} size={size} />
     case 'Clouds':
       return <WiCloudy color={color} size={size} />
+    case 'Time':
+      return <WiTime4 color={color} size={size} />
     default:
       return <WiAlien color={color} size={size} />
   }
 }
 
 export default WeatherIcon
+
+WeatherIcon.prototypePropTypes = {
+  main: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired
+}

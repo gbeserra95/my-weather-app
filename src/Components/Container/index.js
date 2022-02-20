@@ -1,7 +1,32 @@
-import React from 'react'
+import PropTypes from 'prop-types'
 
-function Container() {
-  return <div className="container"></div>
+import { main } from '../../utils/background'
+
+import { App } from './styles'
+
+const RAINBOW =
+  'linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);'
+function Container({ weather, time, children }) {
+  return (
+    <App
+      bg={
+        weather
+          ? time.localTime > time.sunrise * 1000 &&
+            time.localTime < time.sunset * 1000
+            ? `url(${main.find(item => item.main === weather).day});`
+            : `url(${main.find(item => item.main === weather).night});`
+          : RAINBOW
+      }
+    >
+      {children}
+    </App>
+  )
 }
 
 export default Container
+
+Container.prototypePropTypes = {
+  weather: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  time: PropTypes.object
+}

@@ -1,15 +1,7 @@
-import React from 'react'
+import { Input } from './styles'
 
-// import { Container } from './styles';
-
-function SearchBox() {
-  return (
-    <input
-      className="search-box"
-      type="text"
-      placeholder="Digite sua cidade..."
-    />
-  )
+function SearchBox({ ...otherProps }) {
+  return <Input type="text" placeholder="Type a city..." {...otherProps} />
 }
 
 export default SearchBox
