@@ -1,6 +1,6 @@
 # My Weather App
 
-![Screenshot from 2022-02-20 19-55-37](https://user-images.githubusercontent.com/47508755/154868216-eb77d4f4-a22a-4cf1-8f67-c7a66f1ae0d1.png)
+![Screenshot from 2022-02-20 20-22-22](https://user-images.githubusercontent.com/47508755/154868903-4b6ea699-22dd-45bf-9bfa-5539260e1b67.png)
 
 ## Project Description
 
@@ -30,7 +30,7 @@ Access the application on http://localhost:3000/
 - Places autocomplete from [Radar.io API](https://radar.com/documentation)
 
 ## Author
-Created by [Gabriel Beserra](https://github.com/gbeserra95)
+Created by [Gabriel Beserra](https://github.com/gbeserra95). </br>
 Contact me at [LinkedIn](https://www.linkedin.com/in/-gabrielbeserra/)!
 
 Cheers! 👋
