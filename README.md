@@ -1,6 +1,6 @@
 # My Weather App
 
-![Screenshot from 2022-02-20 20-22-22](https://user-images.githubusercontent.com/47508755/154868903-4b6ea699-22dd-45bf-9bfa-5539260e1b67.png)
+![Screenshot from 2022-02-21 09-54-49](https://user-images.githubusercontent.com/47508755/154959310-09508545-f76f-4abf-9e02-b805efe56ade.png)
 
 ## Project Description
 
