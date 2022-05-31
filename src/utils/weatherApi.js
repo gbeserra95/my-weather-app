@@ -1,6 +1,6 @@
 const api = {
-  base: 'https://api.openweathermap.org/data/2.5/',
-  key: '',
+  base: process.env.REACT_APP_WEATHER_BASE_API,
+  key: process.env.REACT_APP_WEATHER_API_KEY,
   units: 'metric'
 }
 
