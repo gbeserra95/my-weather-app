@@ -10,7 +10,7 @@ import {
   InfoDiv
 } from './styles'
 
-import { timeStampToHour, formateDate, UTCdate } from '../../utils/formateDate'
+import { timeStampToHour, formateDate, UTCtime } from '../../utils/formateDate'
 import WeatherIcon from '../WeatherIcon'
 
 const SMALL_ICON_SIZE = 36
@@ -51,17 +51,17 @@ function Weather({
       <Info>
         <InfoDiv>
           <WeatherIcon main="Sunrise" size={SMALL_ICON_SIZE} />
-          <div>{timeStampToHour(sunrise * 1000)}</div>
+          <div>{timeStampToHour(UTCtime() + currentTime * 1000 - new Date().getTime() + sunrise * 1000)}</div>
         </InfoDiv>
         <InfoDiv>
           <WeatherIcon main="Sunset" size={SMALL_ICON_SIZE} />
-          <div>{timeStampToHour(sunset * 1000)}</div>
+          <div>{timeStampToHour(UTCtime() + currentTime * 1000 - new Date().getTime() + sunset * 1000)}</div>
         </InfoDiv>
       </Info>
       <Info>
         <InfoDiv>
           <WeatherIcon main="Humidity" size={36} />
-          <div>{humidity}</div>
+          <div>{humidity}%</div>
         </InfoDiv>
         <InfoDiv>
           <WeatherIcon main="Wind" size={24} />
@@ -72,7 +72,7 @@ function Weather({
         <InfoDiv>Feels like: {feelsLike}°C</InfoDiv>
         <InfoDiv>
           <WeatherIcon main="Time" size={24} />
-          <div>{timeStampToHour(UTCdate() + currentTime * 1000)}</div>
+          <div>{timeStampToHour(UTCtime() + currentTime * 1000)}</div>
         </InfoDiv>
       </Info>
     </Container>

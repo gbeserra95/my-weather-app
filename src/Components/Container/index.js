@@ -5,7 +5,7 @@ import { main } from '../../utils/background'
 import { App } from './styles'
 
 const RAINBOW =
-  'linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);'
+  'linear-gradient(to right, #3CBEDB, #FFFFFF, #3CBEDB);'
 function Container({ weather, time, children }) {
   return (
     <App

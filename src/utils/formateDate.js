@@ -45,7 +45,17 @@ export const timeStampToHour = timeStamp => {
   return `${hours}h${minutes}`
 }
 
-export const UTCdate = () => {
+export const UTCoffset = () => {
   const d = new Date()
-  return d.getTime() + 3600 * 3000
+  return d.getTimezoneOffset() * 60 * 1000
+}
+
+export const UTCtime = () => {
+  const d = new Date()
+  return d.getTime() + d.getTimezoneOffset() * 60 * 1000
+}
+
+export const currentTimeUTC = () => {
+  const date = new Date(Date.now())
+  return date.getTime()
 }
