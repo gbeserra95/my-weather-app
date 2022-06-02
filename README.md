@@ -1,36 +1,53 @@
-# My Weather App
+<div align="center">
+    <img src="/src/assets/logo.png" alt="my weather app logo" />
+    <p>A React Weather Forecast Application application using OpenWeatherMap and Radar.io APIs developed for study purposes</p>
+</div>
 
-![Screenshot from 2022-02-21 09-54-49](https://user-images.githubusercontent.com/47508755/154959310-09508545-f76f-4abf-9e02-b805efe56ade.png)
+<div align="center">
+    <a href="">View Demo</a>
+</div>
 
-## Project Description
+## About
 
 My Weather App is a [React](https://reactjs.org/) Application that fetches weather information from all over the world using the API services from [OpenWeatherMap](https://openweathermap.org/) and [Radar](https://radar.com/documentation).
 
-## Install
-```bash
-npm install
-```
-Before starting the application, you must get your own OpenWeatherMap and Radar API keys.</br>
-Add those keys as values of the variables **radarKey** at *src/utils/radarApi.js* and **api.key** at *src/utils/weatherApi.js*.
+## Built with
 
-You can also add those keys as environment variables.
-
-## Run
-```bash
-npm start
-```
-## Application
-Access the application on http://localhost:3000/
-
-## Technologies
 - [React](https://reactjs.org/)
 - [React-Icons](https://react-icons.github.io/react-icons)
 - [Styled-Components](https://styled-components.com/)
-- Weather data from [OpenWeatherMap API](https://openweathermap.org/)
-- Places autocomplete from [Radar.io API](https://radar.com/documentation)
+- [OpenWeatherMap API](https://openweathermap.org/)
+- [Radar.io API](https://radar.com/documentation)
+- [Vercel](https://vercel.com/docs)
+
+## Installation
+
+1. Clone the repo with `git clone https://github.com/gbeserra95/my-weather-app.git`
+
+2. Install yarn packages with `npm install`
+
+3. Create a `.env.local` file and edit the following environment variables:
+
+   - `REACT_APP_WEATHER_BASE_API`=https://api.openweathermap.org/data/2.5/
+   - `REACT_APP_WEATHER_API_KEY`=[your own private ley]
+   - `REACT_APP_RADAR_API_KEY`=[your own private key]
+
+4. Run `npm start`
+
+## License
+
+Distributed under the MIT License.<br>
+
+See `LICENSE.txt` for more information.
 
 ## Author
-Created by [Gabriel Beserra](https://github.com/gbeserra95). </br>
-Contact me at [LinkedIn](https://www.linkedin.com/in/-gabrielbeserra/)!
 
-Cheers! 👋
+Created by [Gabriel Beserra](https://github.com/gbeserra95).
+
+Find me on [LinkedIn](https://www.linkedin.com/in/-gabrielbeserra/)!
+
+Cheers! 🍻
+
+<div align="right">
+    <a href="#">back to top</a>
+</div>
