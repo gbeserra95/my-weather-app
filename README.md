@@ -9,7 +9,7 @@
 
 ## About
 
-My Weather App is a [React](https://reactjs.org/) Application that fetches weather information from all over the world using the API services from [OpenWeatherMap](https://openweathermap.org/) and [Radar](https://radar.com/documentation).
+My Weather App is a [React](https://reactjs.org/) Application that fetches weather information from all over the world using the API services of [OpenWeatherMap](https://openweathermap.org/) and [Radar](https://radar.com/documentation).
 
 ## Built with
 
